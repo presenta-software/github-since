@@ -141,12 +141,14 @@ footer{
   background: #363636;
   color: #a8a7a7;
 }
+footer p{
+  margin: .5rem 0;
+}
 footer a{
   color: white;
 }
 footer .small{
-  padding: 1rem 0;
-  font-size: 0.85rem;
+  font-size: 0.65rem;
 }
 
 
