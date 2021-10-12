@@ -1,38 +1,202 @@
 .App {
   text-align: center;
+  color: #474747;
+  font-family: 'Raleway', sans-serif;
+  background-color: #fff;
+
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2, h3, p{
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a{
+  color: white;
+}
+a:hover{
+  color: #e8175d;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1{
+  margin-top:2rem;
+  margin-bottom:2rem;
+  font-size: 5rem;
+  font-family: 'Work Sans', sans-serif;
+  line-height: 4rem;
+}
+
+h2{
+  font-size: 3rem;
+}
+
+mark{
+  background-color: #e8175d;
+  color: white;
+  padding: 0rem 0.3rem;
+}
+
+.black{
+  background-color: #474747;
+  color: white;
+}
+
+
+.payoff{
+  padding: 2rem 1rem;
+  font-size: 1.25rem;
+}
+.showcase{
+  padding: 0 1rem;
+}
+.showcase img{
+  width: 100%;
+}
+
+
+
+.card{
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.card .inner{
+  border: 1px dashed #756c6c;
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card img{
+  width: 100%;
+}
+
+.alt{
+  font-family: 'Allison';
+  font-weight: normal;
+  color: #e8175d;
+  display: block;
+}
+
+
+input, button{
+  font-family: 'Raleway', sans-serif;
+}
+
+
+.form{
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.form input{
+  font-size: 1.5rem;
+  padding: .5rem;
+  width: 100%;
+  border: 2px solid #e8175d;
+  text-align: center;
+  color: #474747;
+}
+.form button{
+  margin-top:1rem;
+}
+
+
+.cta{
+  padding: 1rem;
+}
+
+
+button{
+  font-size: 1.5rem;
+  padding: .5rem 1.5rem;
+  border: 2px solid #e8175d;
+  border-radius: 20px;
+  color: #e8175d;
+  background: white;
+  text-transform: uppercase;
+}
+button:hover{
+  background-color: #e8175d;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button:disabled{
+  opacity: 0.5;
+  pointer-events: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+footer{
+  margin-top: 1rem;
+  padding: 2rem 1rem;
+  background: #363636;
+  color: #a8a7a7;
+}
+footer a{
+  color: white;
+}
+footer .small{
+  padding: 1rem 0;
+  font-size: 0.85rem;
+}
+
+
+.wrapper{
+  width: 100%;
+  margin: auto;
+}
+
+
+@media screen and (min-width: 560px) {
+  html{
+    font-size: 110%;
   }
-  to {
-    transform: rotate(360deg);
+  .wrapper{
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 720px) {
+  html{
+    font-size: 120%;
+  }
+  .wrapper{
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  html{
+    font-size: 130%;
+  }
+  .wrapper{
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  html{
+    font-size: 140%;
+  }
+  .wrapper{
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1360px) {
+  html{
+    font-size: 150%;
+  }
+  .wrapper{
+    width: 50%;
   }
 }
