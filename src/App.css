@@ -122,10 +122,12 @@ button{
   color: #e8175d;
   background: white;
   text-transform: uppercase;
+  transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 button:hover{
   background-color: #e8175d;
   color: white;
+  transform: scale(1.1);
 }
 
 button:disabled{

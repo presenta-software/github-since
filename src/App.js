@@ -2,22 +2,26 @@ import './App.css'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { useState, useRef } from 'react'
+import copyClipboard from './utils/copyClipboard'
 
 dayjs.extend(relativeTime)
 
 function App () {
   const [btnDisabled, setBtnDisabled] = useState(true)
   const [btnLabel, setBtnLabel] = useState('Create!')
+  const [btnCopyLabel, setBtnCopyLabel] = useState('Copy URL 🚀')
   const [showError, setShowError] = useState(false)
   const [showCard, setShowCard] = useState(false)
   const tfUsername = useRef()
 
   const handleGenerate = async e => {
     setBtnLabel('Generating...')
+    setBtnCopyLabel('Copy URL 🚀')
     setShowError(false)
     setShowCard(false)
     setBtnDisabled(true)
 
+    tfUsername.current.blur()
     const v = tfUsername.current.value
     const res = await fetch('https://api.github.com/users/' + v)
     const usr = await res.json()
@@ -61,6 +65,8 @@ function App () {
 
   const handleCopyUrl = e => {
     console.log('copy')
+    copyClipboard(showCard)
+    setBtnCopyLabel('👉 You got it! 👈')
   }
 
   return (
@@ -97,19 +103,18 @@ function App () {
       <div className='wrapper'>
         <div className='card'>
           <div className='inner'>
-            {showCard && <img alt='Github User Since Card' src={showCard} />}
+            {showCard && <img alt='Github User Since Card' src={showCard + '?w=500'} />}
           </div>
         </div>
       </div>
 
       {showCard &&
         <div className='cta'>
-          <button onClick={handleCopyUrl}>Copy URL 🚀</button>
+          <button onClick={handleCopyUrl}>{btnCopyLabel}</button>
         </div>}
 
       <footer>
         <p>This tool uses <a href='https://www.presenta.cc'>PRESENTA Editor and API</a> for the template and image generation.</p>
-        <p>Have a wonderful day! </p>
         <p className='small'>Review the <a href='https://www.presenta.cc/legal/privacy-policy'>Privacy Policy</a>, the <a href='https://www.presenta.cc/legal/cookie-policy'>Cookie Policy</a> and <a href='https://www.presenta.cc/legal/terms-of-service'>Terms Of Use</a> of PRESENTA application and website. </p>
       </footer>
 
