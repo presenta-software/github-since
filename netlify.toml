@@ -1,4 +1,3 @@
 [build]
-  publish = "dist"
   functions = "src/functions"
   #command = "npm run build:lambda"
