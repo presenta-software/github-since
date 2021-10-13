@@ -13,7 +13,7 @@ const MainHead = () => {
       </div>
 
       <div className='right'>
-        <img alt='example' src='t.png' />
+        <img alt='example' src='mock.jpg' />
       </div>
     </div>
   )

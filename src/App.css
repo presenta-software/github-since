@@ -56,9 +56,6 @@ mark{
 .mainHead img{
   width: 100%;
 }
-.mainHead .right{
-  padding: 1rem;
-}
 
 
 .err{
@@ -139,6 +136,7 @@ input, button{
   color: #474747;
   padding: .5rem;
   text-decoration: underline;
+  cursor: pointer;
 }
 .form a{
   color: #474747;
@@ -229,6 +227,9 @@ footer .small{
   }
   .mainHead{
     flex-direction: row;
+  }
+  .mainHead .left{
+    margin-bottom: 2rem;
   }
 }
 
