@@ -32,8 +32,6 @@ exports.handler = async (event, context) => {
     return err('Wrong Param')
   }
 
-  console.log(json)
-
   const meta = `
       <meta charset="utf-8">
       <meta property="og:type" content="website">

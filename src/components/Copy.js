@@ -2,7 +2,7 @@ import { useState } from 'react'
 import copyClipboard from './utils/copyClipboard'
 
 const Copy = ({ url, name }) => {
-  const [btnCopyLabel, setBtnCopyLabel] = useState('Copy URL 🚀')
+  const [btnCopyLabel, setBtnCopyLabel] = useState('Copy sharable URL 🚀')
   const [copied, setCopied] = useState(false)
 
   const handleCopyUrl = e => {

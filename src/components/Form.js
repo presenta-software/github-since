@@ -23,7 +23,7 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
       console.log(usr)
 
       const workAt = usr.company ? `, works in ${usr.company}` : ''
-      const text = `has ${usr.public_repos} repos, ${usr.public_gists} gists${workAt} and is followed by ${usr.followers} and follows ${usr.following} people.`
+      const text = `has ${usr.public_repos} repos, ${usr.public_gists} gists${workAt}, followed by ${usr.followers} and follows ${usr.following} people.`
 
       const diff = dayjs(usr.created_at).valueOf()
       const start = dayjs('2007-10-20T05:24:19Z').valueOf()
