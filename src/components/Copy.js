@@ -17,13 +17,14 @@ const Copy = ({ url, name }) => {
     const obstr = JSON.stringify(ob)
     const obstrb = btoa(obstr)
 
-    copyClipboard(obstrb)
+    copyClipboard('https://github-since.presenta.cc/f/share/' + obstrb)
     setBtnCopyLabel('👉 You got it! 👋')
     setCopied(true)
   }
 
   return (
     <div className='cta'>
+      <p><a href={url} target='_blank' rel='noreferrer'>Download the image</a> or</p>
       <button onClick={handleCopyUrl}>{btnCopyLabel}</button>
       {copied && <p>Great! Now you can share this GitHub-Since card. <br />Simply paste the URL where you want!</p>}
     </div>

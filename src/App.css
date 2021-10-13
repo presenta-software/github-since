@@ -76,7 +76,9 @@ mark{
   width: 100%;
 }
 
-
+.cta a{
+  color: #756c6c;
+}
 
 .card{
   min-height: 250px;
