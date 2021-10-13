@@ -51,7 +51,8 @@ exports.handler = async (event, context) => {
       <meta name="twitter:description" content="${json.description}">
     `
 
-  const html = src.html.replace('<meta internal/>', meta)
+  let html = src.html.replace('<meta internal/>', meta)
+  html = html.replace(`<script>window.MOCK_URL='${'mock.jpg'}'</script>`, `<script>window.MOCK_URL='${json.image}'</script>`)
 
   return {
     statusCode: 200,

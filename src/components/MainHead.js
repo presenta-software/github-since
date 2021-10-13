@@ -13,7 +13,7 @@ const MainHead = () => {
       </div>
 
       <div className='right'>
-        <img alt='example' src='mock.jpg' />
+        <img alt='example' src={window.MOCK_URL} />
       </div>
     </div>
   )
