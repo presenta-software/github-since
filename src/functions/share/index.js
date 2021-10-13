@@ -52,7 +52,7 @@ exports.handler = async (event, context) => {
     `
 
   let html = src.html.replace('<meta internal/>', meta)
-  html = html.replace('<script>window.MOCK_URL="mock.jpg"</script>', `<script>window.MOCK_URL="${json.image}"</script>`)
+  html = html.replace('<script>window.MOCK_URL="mock.png"</script>', `<script>window.MOCK_URL="${json.image}"</script>`)
 
   return {
     statusCode: 200,
