@@ -5,6 +5,7 @@ const Card = ({ url }) => {
       <div className='card'>
         <div className='inner'>
           {url && <img alt='Github User Since Card' src={url + '?w=500'} />}
+          {!url && <p>Empty</p>}
         </div>
       </div>
     </div>

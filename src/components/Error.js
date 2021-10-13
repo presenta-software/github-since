@@ -1,7 +1,9 @@
 
 const Error = ({ message }) => {
   return (
-    <p>{message}</p>
+    <div className='wrapper'>
+      <p className='err'>There's an error: 😢<br /><strong>{message}</strong></p>
+    </div>
   )
 }
 

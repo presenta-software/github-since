@@ -5,6 +5,7 @@
   background-color: #fff;
 
   width: 100%;
+  --mainColor: #0066FF;
 }
 
 h1, h2, h3, p{
@@ -15,7 +16,7 @@ a{
   color: white;
 }
 a:hover{
-  color: #e8175d;
+  color: var(--mainColor);
 }
 
 h1{
@@ -31,14 +32,39 @@ h2{
 }
 
 mark{
-  background-color: #e8175d;
+  background-color: var(--mainColor);
   color: white;
   padding: 0rem 0.3rem;
 }
 
 .black{
-  background-color: #474747;
+  background-color: var(--mainColor);
   color: white;
+}
+
+
+.mainHead{
+  display: flex;
+  flex-direction: column;
+}
+.mainHead > div{
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainHead img{
+  width: 100%;
+}
+.mainHead .right{
+  padding: 1rem;
+}
+
+
+.err{
+  background: #e8175d2d;
+  border: 3px solid var(--mainColor);
+  padding: 1rem;
 }
 
 
@@ -79,7 +105,7 @@ mark{
 .alt{
   font-family: 'Allison';
   font-weight: normal;
-  color: #e8175d;
+  color: var(--mainColor);
   display: block;
 }
 
@@ -100,7 +126,7 @@ input, button{
   font-size: 1.5rem;
   padding: .5rem;
   width: 100%;
-  border: 2px solid #e8175d;
+  border: 1px solid #ddd;
   text-align: center;
   color: #474747;
 }
@@ -108,24 +134,39 @@ input, button{
   margin-top:1rem;
 }
 
+.form p{
+  font-size: .7rem;
+  color: #474747;
+  padding: .5rem;
+}
+.form a{
+  color: #474747;
+}
+.form a:hover{
+  color: var(--mainColor);
+}
+
 
 .cta{
   padding: 1rem;
+}
+.cta p{
+  padding: 0.5rem;
 }
 
 
 button{
   font-size: 1.5rem;
   padding: .5rem 1.5rem;
-  border: 2px solid #e8175d;
+  border: 2px solid var(--mainColor);
   border-radius: 20px;
-  color: #e8175d;
+  color: var(--mainColor);
   background: white;
   text-transform: uppercase;
   transition: transform 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 button:hover{
-  background-color: #e8175d;
+  background-color: var(--mainColor);
   color: white;
   transform: scale(1.1);
 }
@@ -176,6 +217,7 @@ footer .small{
   .wrapper{
     width: 80%;
   }
+  
 }
 
 @media screen and (min-width: 960px) {
@@ -184,6 +226,9 @@ footer .small{
   }
   .wrapper{
     width: 70%;
+  }
+  .mainHead{
+    flex-direction: row;
   }
 }
 
