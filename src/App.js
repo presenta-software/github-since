@@ -12,14 +12,16 @@ import Error from './components/Error'
 function App () {
   const [showError, setShowError] = useState(false)
   const [showCard, setShowCard] = useState(false)
+  const [showName, setShowName] = useState(false)
 
   const handleBegin = () => {
     setShowError(false)
     setShowCard(false)
   }
 
-  const handleAction = (url) => {
+  const handleAction = (url, name) => {
     setShowCard(url)
+    setShowName(name)
   }
 
   const handleError = (msg) => {
@@ -40,7 +42,7 @@ function App () {
       {showError && <Error message={showError} />}
 
       <Card url={showCard} />
-      {showCard && <Copy url={showCard} />}
+      {showCard && <Copy url={showCard} name={showName} />}
 
       <Footer />
 

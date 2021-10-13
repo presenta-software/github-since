@@ -51,7 +51,7 @@ exports.handler = async (event, context) => {
       <meta name="twitter:description" content="${json.description}">
     </head>
     <body>
-      <p>Copy the URL and put it in a social network post</p>
+      <p>This page if for sharing purpose only. Copy the URL and share in your preferred social network.</p>
     </body>
   </html>`
 

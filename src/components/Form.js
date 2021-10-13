@@ -52,7 +52,7 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
       })
       console.log(res1)
       const img = await res1.json()
-      onHandleAction(img.url)
+      onHandleAction(img.url, name)
     } else {
       onHandleError(usr.message)
     }
@@ -75,7 +75,7 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
   }
 
   const handleSample = e => {
-    tfUsername.current.value = 'abusedmedia'
+    tfUsername.current.value = 'presenta-software'
     setBtnDisabled(false)
     e.preventDefault()
     e.stopPropagation()
@@ -85,7 +85,7 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
     <div className='wrapper'>
       <div className='form'>
         <input placeholder='type a GitHub username' onKeyUp={handleKeyUp} ref={tfUsername} type='text' onChange={handleTyping} />
-        <p onClick={handleSample}>I don't know. Put a sample.</p>
+        <p onClick={handleSample}>I don't know. Use the sample.</p>
         <button disabled={btnDisabled} onClick={handleGenerate}>{btnLabel}</button>
 
       </div>
