@@ -29,11 +29,10 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
       const start = dayjs('2007-10-20T05:24:19Z').valueOf()
       const end = dayjs().valueOf()
       const perc = scaleValue(diff, [start, end], [100, 0])
-      console.log(start, diff, end)
+
       const bx = scaleValue(perc, [0, 100], [88, 0]) + 6
       const bw = scaleValue(100 - perc, [0, 100], [88, 0])
       const sx = scaleValue(perc, [0, 100], [88, 0]) + 1
-      console.log(bx, bw, sx)
 
       const name = usr.name || usr.login
 
@@ -86,7 +85,7 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
     <div className='wrapper'>
       <div className='form'>
         <input placeholder='type a GitHub username' onKeyUp={handleKeyUp} ref={tfUsername} type='text' onChange={handleTyping} />
-        <p><a onClick={handleSample} href=''>I don't know. Put a sample.</a></p>
+        <p onClick={handleSample}>I don't know. Put a sample.</p>
         <button disabled={btnDisabled} onClick={handleGenerate}>{btnLabel}</button>
 
       </div>

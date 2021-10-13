@@ -138,6 +138,7 @@ input, button{
   font-size: .7rem;
   color: #474747;
   padding: .5rem;
+  text-decoration: underline;
 }
 .form a{
   color: #474747;
@@ -145,7 +146,6 @@ input, button{
 .form a:hover{
   color: var(--mainColor);
 }
-
 
 .cta{
   padding: 1rem;
