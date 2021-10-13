@@ -22,8 +22,8 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
     if (usr.id) {
       console.log(usr)
 
-      const workAt = usr.company ? ` and works in ${usr.company}` : ''
-      const text = `has ${usr.public_repos} repos, ${usr.public_gists} gists${workAt}. He is followed by ${usr.followers} and follows ${usr.following} people.`
+      const workAt = usr.company ? `, works in ${usr.company}` : ''
+      const text = `has ${usr.public_repos} repos, ${usr.public_gists} gists${workAt} and is followed by ${usr.followers} and follows ${usr.following} people.`
 
       const diff = dayjs(usr.created_at).valueOf()
       const start = dayjs('2007-10-20T05:24:19Z').valueOf()
@@ -32,7 +32,6 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
 
       const bx = scaleValue(perc, [0, 100], [88, 0]) + 6
       const bw = scaleValue(100 - perc, [0, 100], [88, 0])
-      const sx = scaleValue(perc, [0, 100], [88, 0]) + 1
 
       const name = usr.name || usr.login
 
@@ -43,10 +42,10 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
         footer: `${name} is a GitHub User since ${dayjs(usr.created_at).toNow(true)}`,
         'bluebar[coords][left]': bx,
         'bluebar[coords][width]': bw,
-        'signup[coords][left]': sx
+        'signup[coords][left]': bx
       }
 
-      const res1 = await fetch('https://app.presenta.cc/f/render/zGywhb2oJn:fnZmUPFXZ', {
+      const res1 = await fetch('https://app.presenta.cc/f/render/zGywhb2oJn:fAapXMBCk', {
         method: 'POST',
         body: JSON.stringify(ob)
       })

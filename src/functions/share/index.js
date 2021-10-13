@@ -1,3 +1,5 @@
+const src = require('./index.html.json')
+
 const err = m => {
   return {
     statusCode: 200,
@@ -32,9 +34,7 @@ exports.handler = async (event, context) => {
 
   console.log(json)
 
-  const html = `
-  <html lang="en">
-    <head>
+  const meta = `
       <meta charset="utf-8">
       <meta property="og:type" content="website">
       <meta property="og:title" content="${json.title}">
@@ -49,11 +49,9 @@ exports.handler = async (event, context) => {
       <meta name="twitter:image:src" content="${json.image}">
       <meta name="twitter:site" content="${json.site}">
       <meta name="twitter:description" content="${json.description}">
-    </head>
-    <body>
-      <p>This page if for sharing purpose only. Copy the URL and share in your preferred social network.</p>
-    </body>
-  </html>`
+    `
+
+  const html = src.html.replace('<meta internal/>', meta)
 
   return {
     statusCode: 200,
