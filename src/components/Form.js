@@ -20,8 +20,6 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
     const res = await fetch('https://api.github.com/users/' + v)
     const usr = await res.json()
     if (usr.id) {
-      console.log(usr)
-
       const workAt = usr.company ? `, works in ${usr.company}` : ''
       const text = `has ${usr.public_repos} repos, ${usr.public_gists} gists${workAt}, followed by ${usr.followers} and follows ${usr.following} people.`
 
@@ -49,7 +47,7 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
         method: 'POST',
         body: JSON.stringify(ob)
       })
-      console.log(res1)
+
       const img = await res1.json()
       onHandleAction(img.url, name)
     } else {

@@ -33,7 +33,6 @@ exports.handler = async (event, context) => {
   }
 
   const meta = `
-      <meta charset="utf-8">
       <meta property="og:type" content="website">
       <meta property="og:title" content="${json.title}">
       <meta property="og:url" content="${json.url}">
@@ -47,9 +46,19 @@ exports.handler = async (event, context) => {
       <meta name="twitter:image:src" content="${json.image}">
       <meta name="twitter:site" content="${json.site}">
       <meta name="twitter:description" content="${json.description}">
+      <meta name="twitter:creator" content="@PresentaSwBot">
+
+      <meta name="description" content="${json.description}">
+      <meta name="image" content="${json.image}">
+
+      <meta itemprop="name" content="${json.title}">
+      <meta itemprop="description" content="${json.description}">
+      <meta itemprop="image" content="${json.image}">
+
+      <title>${json.title} - A Card Generator Tool made with PRESENTA.CC</title>
     `
 
-  let html = src.html.replace('<meta internal/>', meta)
+  let html = src.html.replace('<meta injected/>', meta)
   html = html.replace('<script>window.MOCK_URL="mock.png"</script>', `<script>window.MOCK_URL="${json.image}"</script>`)
 
   return {
