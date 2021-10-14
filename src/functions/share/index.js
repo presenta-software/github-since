@@ -35,14 +35,14 @@ exports.handler = async (event, context) => {
   const meta = `
       <meta property="og:type" content="website">
       <meta property="og:title" content="${json.title}">
-      <meta property="og:url" content="${json.url}">
+      <meta property="og:url" content="${event.path}${json.url}">
       <meta property="og:image" content="${json.image}">
       <meta property="og:site_name" content="${json.site}">
       <meta property="og:description" content="${json.description}">
 
       <meta name="twitter:card" content="summary_large_image">
       <meta name="twitter:title" content="${json.title}">
-      <meta name="twitter:url" content="${json.url}">
+      <meta name="twitter:url" content="${event.path}${json.url}">
       <meta name="twitter:image:src" content="${json.image}">
       <meta name="twitter:site" content="${json.site}">
       <meta name="twitter:description" content="${json.description}">

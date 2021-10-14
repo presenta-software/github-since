@@ -8,7 +8,7 @@ const Copy = ({ url, name }) => {
   const handleCopyUrl = e => {
     const ob = {
       title: `${name} @ GitHub-Since`,
-      url: 'https://github-since.presenta.cc/',
+      url: 'https://github-since.presenta.cc',
       image: url,
       description: 'GitHub-Since allows to generate a personal card using your public GitHub info',
       site: 'GitHub-Since'
