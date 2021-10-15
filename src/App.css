@@ -145,6 +145,9 @@ input, button{
   font-size: .7rem;
   color: #474747;
   padding: .5rem;
+  
+}
+.form span{
   text-decoration: underline;
   cursor: pointer;
 }
