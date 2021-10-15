@@ -2,8 +2,8 @@
 const Showcase = () => {
   return (
     <div className='black'>
-      <p className='payoff'>👉 Get your personal <mark>GitHub-Since</mark> card! 👈 <br />
-        💥 Create your own! 💥
+      <p className='payoff'>Get your personal <mark>GitHub-Since</mark> card!<br />
+        Create your own!
 
         <br />👇👇👇
       </p>

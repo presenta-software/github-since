@@ -32,8 +32,8 @@ h2{
 }
 
 mark{
-  background-color: var(--mainColor);
-  color: white;
+  background-color: white;
+  color: var(--mainColor);
   padding: 0rem 0.3rem;
 }
 
