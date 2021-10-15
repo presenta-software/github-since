@@ -82,7 +82,7 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
     <div className='wrapper'>
       <div className='form'>
         <input placeholder='type a GitHub username' onKeyUp={handleKeyUp} ref={tfUsername} type='text' onChange={handleTyping} />
-        <p>I don't know. <span onClick={handleSample}>Use the sample</span> or just type something short randomly, <br />Github has nearly 100 Millions of users!</p>
+        <p>Confused? <span onClick={handleSample}>Use the sample</span> or just type something short randomly, <br />Github has nearly 100 Millions of users!</p>
         <button disabled={btnDisabled} onClick={handleGenerate}>{btnLabel}</button>
 
       </div>

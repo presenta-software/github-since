@@ -13,19 +13,23 @@ function App () {
   const [showError, setShowError] = useState(false)
   const [showCard, setShowCard] = useState(false)
   const [showName, setShowName] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleBegin = () => {
     setShowError(false)
     setShowCard(false)
+    setIsLoading(true)
   }
 
   const handleAction = (url, name) => {
     setShowCard(url)
     setShowName(name)
+    setIsLoading(false)
   }
 
   const handleError = (msg) => {
     setShowError(msg)
+    setIsLoading(false)
   }
 
   return (
@@ -41,7 +45,7 @@ function App () {
 
       {showError && <Error message={showError} />}
 
-      <Card url={showCard} />
+      <Card url={showCard} loading={isLoading} />
       {showCard && <Copy url={showCard} name={showName} />}
 
       <Footer />
