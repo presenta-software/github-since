@@ -1,5 +1,6 @@
 /js/script.js https://plausible.io/js/plausible.js 200
 /api/event https://plausible.io/api/event 202
 
+/fff/*   https://fff-netlify-functions.netlify.app/.netlify/functions/:splat  200
 /f/*   /.netlify/functions/:splat  200
 /*    /index.html   200

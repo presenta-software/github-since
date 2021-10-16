@@ -5,11 +5,22 @@ const Copy = ({ url, name }) => {
   const [btnCopyLabel, setBtnCopyLabel] = useState('Copy sharable URL')
   const [copied, setCopied] = useState(false)
 
-  const handleCopyUrl = e => {
+  const handleCopyUrl = async e => {
+    const shortRes = await fetch('https://github-since.presenta.cc/fff/shrtnr', {
+      method: 'POST',
+      body: JSON.stringify({ url })
+    })
+    const short = await shortRes.json()
+
+    if (!short.url) {
+      console.log('error', short)
+      return
+    }
+
     const ob = {
       title: `${name} @ GitHub-Since`,
       url: 'https://github-since.presenta.cc',
-      image: url,
+      image: short.url,
       description: 'GitHub-Since allows to generate a personal card using your public GitHub info',
       site: 'GitHub-Since'
     }
