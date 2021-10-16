@@ -6,29 +6,33 @@ const Copy = ({ url, name }) => {
   const [copied, setCopied] = useState(false)
 
   const handleCopyUrl = async e => {
-    const shortRes = await fetch('https://github-since.presenta.cc/fff/shrtnr', {
-      method: 'POST',
-      body: JSON.stringify({ url })
-    })
-    const short = await shortRes.json()
-
-    if (!short.url) {
-      console.log('error', short)
-      return
-    }
-
     const ob = {
       title: `${name} @ GitHub-Since`,
       url: 'https://github-since.presenta.cc',
-      image: short.url,
+      image: url,
       description: 'GitHub-Since allows to generate a personal card using your public GitHub info',
       site: 'GitHub-Since'
     }
 
     const obstr = JSON.stringify(ob)
     const obstrb = btoa(obstr)
+    const fullurl = 'https://github-since.presenta.cc/f/share/' + obstrb
 
-    copyClipboard('https://github-since.presenta.cc/f/share/' + obstrb)
+    const shrtnrUrl = '/fff/shrtnr/'// 'http://localhost:8888/f/shrtnr/'
+    const shortRes = await fetch(shrtnrUrl, {
+      method: 'POST',
+      body: JSON.stringify({ url: fullurl })
+    })
+    const short = await shortRes.json()
+
+    console.log(short)
+
+    if (!short.url) {
+      console.log('error', short)
+      return
+    }
+
+    copyClipboard(shrtnrUrl + short.url)
     setBtnCopyLabel('👉 There you go! 👋')
     setCopied(true)
   }
