@@ -10,6 +10,8 @@ const Footer = () => {
       <p>Have a wonderful day! <br />
         BTW, you're NOT tracked at all!
       </p>
+
+      <p className='small'>Last but not least: this tool is <a href='https://github.com/presenta-software/github-since' target='_blank' rel="noreferrer">open-source</a></p>
     </footer>
   )
 }
