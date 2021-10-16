@@ -19,7 +19,7 @@ const Copy = ({ url, name }) => {
     const obstrb = btoa(obstr)
     const fullurl = 'https://github-since.presenta.cc/f/share/' + obstrb
 
-    const shrtnrUrl = 'https://fff-netlify-functions.netlify.app/f/s/' // 'http://localhost:8888/f/s/'
+    const shrtnrUrl = 'https://preso.cc/f/s/' // 'http://localhost:8888/f/s/'
     const shortRes = await fetch(shrtnrUrl, {
       method: 'POST',
       body: JSON.stringify({ url: fullurl })
