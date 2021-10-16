@@ -17,9 +17,9 @@ const Copy = ({ url, name }) => {
 
     const obstr = JSON.stringify(ob)
     const obstrb = btoa(obstr)
-    const fullurl = 'https://github-since.presenta.cc/f/share/' + obstrb
+    const fullurl = process.env.REACT_APP_BASE_SERVICE_URL + obstrb
 
-    const shrtnrUrl = 'https://preso.cc/f/s/' // 'http://localhost:8888/f/s/'
+    const shrtnrUrl = process.env.REACT_APP_SHORTNER_SERVICE_URL
     const shortRes = await fetch(shrtnrUrl, {
       method: 'POST',
       body: JSON.stringify({ url: fullurl })
