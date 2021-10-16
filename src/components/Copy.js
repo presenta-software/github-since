@@ -18,14 +18,12 @@ const Copy = ({ url, name }) => {
     const obstrb = btoa(obstr)
     const fullurl = 'https://github-since.presenta.cc/f/share/' + obstrb
 
-    const shrtnrUrl = 'https://fff-netlify-functions.netlify.app/f/shrtnr/' // 'http://localhost:8888/f/shrtnr/'
+    const shrtnrUrl = 'https://fff-netlify-functions.netlify.app/f/s/' // 'http://localhost:8888/f/s/'
     const shortRes = await fetch(shrtnrUrl, {
       method: 'POST',
       body: JSON.stringify({ url: fullurl })
     })
     const short = await shortRes.json()
-
-    console.log(short)
 
     if (!short.url) {
       console.log('error', short)
