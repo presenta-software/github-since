@@ -32,7 +32,7 @@ const Copy = ({ url, name }) => {
     }
 
     copyClipboard(shrtnrUrl + short.url)
-    setBtnCopyLabel('👉 There you go! 👋')
+    setBtnCopyLabel('👉 Copied! 👈')
     setCopied(true)
   }
 
@@ -40,7 +40,7 @@ const Copy = ({ url, name }) => {
     <div className='cta'>
       <p><a href={url} target='_blank' rel='noreferrer'>Download the image</a> or</p>
       <button onClick={handleCopyUrl}>{btnCopyLabel}</button>
-      {copied && <p>Share this GitHub-Since URL <br />on your preferred social platform!</p>}
+      {copied && <p>Now, share this GitHub-Since URL <br />on your preferred social platform!</p>}
     </div>
   )
 }
