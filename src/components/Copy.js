@@ -6,6 +6,7 @@ const Copy = ({ url, name }) => {
   const [copied, setCopied] = useState(false)
 
   const handleCopyUrl = async e => {
+    setBtnCopyLabel('Creating URL... ⏱')
     const ob = {
       title: `${name} @ GitHub-Since`,
       url: 'https://github-since.presenta.cc',
