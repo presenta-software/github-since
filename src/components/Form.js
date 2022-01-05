@@ -43,7 +43,7 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
         'signup[coords][left]': bx
       }
 
-      const res1 = await fetch('https://app.presenta.cc/f/render/zGywhb2oJn:fAapXMBCk', {
+      const res1 = await fetch(process.env.REACT_APP_PRESENTA_SERVICE_URL, {
         method: 'POST',
         body: JSON.stringify(ob)
       })
