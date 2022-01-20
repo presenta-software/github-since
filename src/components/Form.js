@@ -38,9 +38,20 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
         text,
         avatar: usr.avatar_url,
         footer: `${name} is a GitHub User since ${dayjs(usr.created_at).toNow(true)}`,
-        'bluebar[coords][left]': bx,
-        'bluebar[coords][width]': bw,
-        'signup[coords][left]': bx
+        // 'bluebar[coords][left]': bx,
+        // 'bluebar[coords][width]': bw,
+        // 'signup[coords][left]': bx,
+        bluebar: {
+          coords: {
+            left: bx,
+            width: bw
+          }
+        },
+        signup: {
+          coords: {
+            left: bx
+          }
+        }
       }
 
       const res1 = await fetch(process.env.REACT_APP_PRESENTA_SERVICE_URL, {
