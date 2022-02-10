@@ -38,12 +38,17 @@ const Copy = ({ url, name }) => {
 
   const twUrl = 'https://twitter.com/intent/tweet?text=Check this Github-Since Card:&url=' + copied
   const fbUrl = 'https://www.facebook.com/sharer.php?p[title]=Check this Github-Since Card:&p[url]=' + copied
+  const liUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + copied
 
   return (
     <div className='cta'>
       <p><a href={url} target='_blank' rel='noreferrer'>Download the image</a> or</p>
       <button onClick={handleCopyUrl}>{btnCopyLabel}</button>
-      {copied && <p>Share on <a target='_blank' href={twUrl} rel='noreferrer'>Twitter</a> or <a target='_blank' href={fbUrl} rel='noreferrer'>Facebook</a></p>}
+      {copied && <p>Share on
+        <a target='_blank' href={twUrl} rel='noreferrer'>Twitter</a>,
+        <a target='_blank' href={fbUrl} rel='noreferrer'>Facebook</a> or
+        <a target='_blank' href={liUrl} rel='noreferrer'>Linkedin</a>
+      </p>}
     </div>
   )
 }
