@@ -37,7 +37,7 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
         name,
         text,
         avatar: usr.avatar_url,
-        footer: `${name} is a GitHub User since ${dayjs(usr.created_at).toNow(true)}`,
+        footer: `${name} is a GitHub User for ${dayjs(usr.created_at).toNow(true)}`,
         // 'bluebar[coords][left]': bx,
         // 'bluebar[coords][width]': bw,
         // 'signup[coords][left]': bx,
