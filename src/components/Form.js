@@ -26,17 +26,17 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
       const diff = dayjs(usr.created_at).valueOf()
       const start = dayjs('2007-10-20T05:24:19Z').valueOf()
       const end = dayjs().valueOf()
-      const perc = scaleValue(diff, [start, end], [100, 0])
-
-      const bx = scaleValue(perc, [0, 100], [88, 0]) + 6
-      const bw = scaleValue(100 - perc, [0, 100], [88, 0])
+      const perc = parseInt(scaleValue(diff, [start, end], [0, 100]))
+      console.log(perc)
 
       const name = usr.name || usr.login
 
       const ob = {
         name,
         text,
+        user: usr.login,
         avatar: usr.avatar_url,
+<<<<<<< HEAD
         footer: `${name} is a GitHub User for ${dayjs(usr.created_at).toNow(true)}`,
         // 'bluebar[coords][left]': bx,
         // 'bluebar[coords][width]': bw,
@@ -52,14 +52,21 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
             left: bx
           }
         }
+=======
+        time: dayjs(usr.created_at).toNow(true),
+        perc: perc + '%'
+>>>>>>> fix
       }
 
       const res1 = await fetch(process.env.REACT_APP_PRESENTA_SERVICE_URL, {
         method: 'POST',
         body: JSON.stringify(ob)
+        // headers: {
+        //   'Content-Type': 'application/json'
+        // }
       })
 
-      const img = await res1.json()
+      const img = await res1.json()// .data
       onHandleAction(img.url, name)
     } else {
       onHandleError(usr.message)
@@ -92,7 +99,7 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
   return (
     <div className='wrapper'>
       <div className='form'>
-        <input placeholder='type a GitHub username' onKeyUp={handleKeyUp} ref={tfUsername} type='text' onChange={handleTyping} />
+        <input placeholder='type a GitHub username' onKeyUp={handleKeyUp} ref={tfUsername} autoComplete='off' type='text' onChange={handleTyping} />
         <p>Confused? <span onClick={handleSample}>Use the sample</span> or just type something short randomly, <br />Github has nearly 100 Millions of users!</p>
         <button disabled={btnDisabled} onClick={handleGenerate}>{btnLabel}</button>
 
