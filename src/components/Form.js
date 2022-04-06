@@ -27,7 +27,6 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
       const start = dayjs('2007-10-20T05:24:19Z').valueOf()
       const end = dayjs().valueOf()
       const perc = parseInt(scaleValue(diff, [start, end], [0, 100]))
-      console.log(perc)
 
       const name = usr.name || usr.login
 
@@ -36,26 +35,8 @@ const Form = ({ onBeginAction, onHandleAction, onHandleError }) => {
         text,
         user: usr.login,
         avatar: usr.avatar_url,
-<<<<<<< HEAD
-        footer: `${name} is a GitHub User for ${dayjs(usr.created_at).toNow(true)}`,
-        // 'bluebar[coords][left]': bx,
-        // 'bluebar[coords][width]': bw,
-        // 'signup[coords][left]': bx,
-        bluebar: {
-          coords: {
-            left: bx,
-            width: bw
-          }
-        },
-        signup: {
-          coords: {
-            left: bx
-          }
-        }
-=======
         time: dayjs(usr.created_at).toNow(true),
         perc: perc + '%'
->>>>>>> fix
       }
 
       const res1 = await fetch(process.env.REACT_APP_PRESENTA_SERVICE_URL, {
